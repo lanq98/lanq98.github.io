@@ -19,14 +19,14 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="🔑 简介安全外壳协议 (Secure Shell Protocol, SSH) 是一种加密的网络传输协议，可在不安全的网络中为网络服务提供安全的传输环境。SSH 默认使用 TCP 端口 22。 SSH 最常见的用途是远程加密登录系统，例如：  本地加密登录远程服务器 Github 身份验证，进行代码的克隆和推送  🔑 SSH 密钥SSH 密钥是一对密钥（私钥 和 公钥）    私钥 公钥">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/images/17636199157493.svg">
+<meta property="og:image" content="http://example.com/images/2025-11-20/17636199157493.svg">
 <meta property="article:published_time" content="2025-11-20T08:56:33.000Z">
-<meta property="article:modified_time" content="2025-11-20T10:09:35.124Z">
+<meta property="article:modified_time" content="2025-11-20T10:39:22.075Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="github">
 <meta property="article:tag" content="ssh">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/images/17636199157493.svg">
+<meta name="twitter:image" content="http://example.com/images/2025-11-20/17636199157493.svg">
     
 
     
@@ -185,7 +185,7 @@
 <div class="article-date">
   <i class="fa fa-calendar-plus-o"></i>
   <a href="/2025/11/20/ssh/" class="article-date">
-     <time datetime="2025-11-20T10:09:35.124Z" itemprop="dateModified">2025-11-20</time>
+     <time datetime="2025-11-20T10:39:22.075Z" itemprop="dateModified">2025-11-20</time>
   </a>
 </div>
 
@@ -241,7 +241,7 @@
 </tbody></table>
 <p>在本机（主机1）生成 SSH 密钥对，将公钥上传至远程服务器（主机2&#x2F;3），可以在多个场景中使用 SSH 密钥进行身份验证：</p>
 <p>登陆远程服务器（可能是本地局域网，也可能是广域网，例如图中主机2）<br>Github 身份验证（例如图中主机3），可以完成代码的克隆和推送<br>对于不同的服务器可以生成不同的密钥，这样可以区分不同的服务器，也可以区分不同的账户</p>
-<p><img src="/images/17636199157493.svg" alt="SSH连接示意图"></p>
+<p><img src="/images/2025-11-20/17636199157493.svg" alt="SSH连接示意图"></p>
 <p>SSH 密钥和配置文件通常存放在 <code>~/.ssh/</code> 目录下（<code>~</code> 代表用户的家目录）</p>
 <ul>
 <li>Linux 中 <code>~</code> 为 <code>/home/&lt;username&gt;</code></li>
@@ -355,7 +355,7 @@
 </blockquote>
 <p>Github 支持使用 SSH 在 GitHub.com 上的存储库中访问和写入数据，参考 <a target="_blank" rel="noopener" href="https://docs.github.com/zh/authentication/connecting-to-github-with-ssh/about-ssh">about-ssh</a></p>
 <p>在 Github 中 <code>Settings -&gt; SSH and GPG keys -&gt; New SSH key</code> 中添加密钥，将本地生成的公钥(<code>id_rsa_github.pub</code>)复制到 Github 中，该密钥的命名可以自定义，建议和设备绑定，并且加上密钥名称，例如 <code>Ubuntu22.04-id_rsa</code>（配置名称后需要设置 <code>config</code> 文件，参考 <a href="#%E5%AF%86%E7%A0%81%E7%AE%A1%E7%90%86"><code>ssh config</code></a>）</p>
-<p><img src="/images/k24940uo.png" alt="公钥添加到 Github"></p>
+<p><img src="/images/2025-11-20/k24940uo.png" alt="公钥添加到 Github"></p>
 <p>添加之后，需要进行连接测试以建立一次连接，例如：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br><span class="line">ssh -T git@Github # 如果在 ~/.ssh/config 中配置了 Host Github</span><br><span class="line">ssh -T git@hf.co  # for verifying Hugging Face</span><br></pre></td></tr></table></figure>
 
@@ -368,7 +368,7 @@
 <blockquote>
 <p>注意：如果是多设备，需要将每个设备的公钥都添加到 Github 中，这样才能实现多设备免密操作。每个设备生成的私钥都不一样，当然了，把密钥复制到其他设备也是可以的，但是这样就失去了 SSH 密钥的意义了。</p>
 </blockquote>
-<p><img src="/images/Bh2Gd5Xb.png" alt="clone 项目采用 ssh 的方式"></p>
+<p><img src="/images/2025-11-20/Bh2Gd5Xb.png" alt="clone 项目采用 ssh 的方式"></p>
 <p>HTTPS 和 SSH clone 方式的区别：</p>
 <ul>
 <li>HTTPS 可以任意用户克隆，SSH 只能克隆自己（有权限的）的项目，并且需要配置 SSH 密钥</li>
@@ -394,7 +394,7 @@
 
 
 
-    <a data-url="http://example.com/2025/11/20/ssh/" data-id="cuidSaDKL2UR2VIWY1wkpA0Ha" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://example.com/2025/11/20/ssh/" data-id="cuidSKQBOwq96M5mkhNvlbked" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -465,7 +465,7 @@
             "name": "John Doe"
         },
         "headline": "SSH",
-        "image": "http://example.com/images/17636199157493.svg",
+        "image": "http://example.com/images/2025-11-20/17636199157493.svg",
         "keywords": "ssh github",
         "genre": "linux github",
         "datePublished": "2025-11-20",
@@ -564,7 +564,7 @@ Github 身份验证，进行代码的克隆和推送
                             <a href="/2025/11/20/ssh/" class="thumbnail">
     
     
-        <span style="background-image:url(/images/17636199157493.svg)" alt="SSH" class="thumbnail-image"></span>
+        <span style="background-image:url(/images/2025-11-20/17636199157493.svg)" alt="SSH" class="thumbnail-image"></span>
     
     
 </a>
